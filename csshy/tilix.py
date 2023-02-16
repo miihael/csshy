@@ -3,6 +3,7 @@ from tempfile import mkstemp
 import json
 import subprocess
 import os
+import uuid
 
 
 def generate_tree(content_array, dimension, next_dimension=None):
@@ -57,8 +58,10 @@ def tilix_backend(login, cluster_nodes, cluster_name):
         "name": "CSSHy",
         "synchronizedInput": True,
         "type": "Session",
-        "uuid": "",
+        "uuid": str(uuid.uuid4()),
         "version": "1.0",
+        "width": 1600,
+        "height": 900,
     }
 
     _, filename = mkstemp()
